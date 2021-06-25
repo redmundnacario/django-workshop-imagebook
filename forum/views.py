@@ -125,13 +125,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         #test2 = self.request.user.is_superuser
         #return any([test1, test2, test3, test4])
 
-class PostDeleteView(LoginRequiredMixin, View):
+class PostDeleteView(View):
 
     def get(self, request, *args, **kwargs):
-
-        status = self._is_banned(request)
-        if status:
-            return status
 
         testimonial = get_object_or_404(models.Post, id=kwargs["pk"])
         testimonial.active = False

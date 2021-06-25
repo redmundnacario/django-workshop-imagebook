@@ -1,40 +1,41 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 {% block content%}
 
 {% if not user.is_anonymous %}
-    Welcome {{ user.username }}! <br>
-    <a href="{% url "logout" %}">Logout</a>
-{% else %}
-    <a href="{% url "login" %}">Login</a><br>
-    <a href="{% url "register" %} ">Register</a>
+    <div class = "menu">
+        <h3>
+            Welcome {{ user.username }}!
+        </h3>
+        <a class="create-post-a" href="{% url "forum:post_create" %}">Create Post</a>
+    </div>
 {% endif %}
 
-<br />
-
-<a href="{% url "forum:post_create" %}"><button>Add new post</button></a>
-
-<hr />
-
 {% for object in object_list %}
-    Name: {{ object.author | title }} <br />
-    Time of posting: {{ object.date_created }} <br />
-    {% if object.date_created != object.date_updated %}
-        Last modified: {{ object.date_updated }} <br />
-    {% endif %}
-    <hr>
-    {{ object.content | truncatewords:3}} <br />
+    <div class="list-card">
+        <div class="list-card-img"
+            style="background-image: url({{ object.picture_url }});"
+        >
+    
+        </div>
+        <div class="list-card-body">
+            <div class ="list-card-header">
+                <h3>
+                    {{ object.author | title }}
+                </h3> 
+                <p>
+                    Since: {{ object.date_updated }}
+                </p>
+            </div>
+            <p>
+                {{ object.content | truncatewords:3}}
+            </p>
+            <div class="list-card-footer">
+                <a href="{% url "forum:post_detail" object.id %}">Read more</a>
+            </div>
+        </div>
 
-    {% if object.picture_url %}
-        <img src="{{ object.picture_url }}" alt="">
-    {% endif %}
-
-    <a href="{% url "forum:post_detail" object.id %}">Read more</a>
-
-    <br />
-    <br />
+    </div>
 {% endfor %}
 
 {% endblock %}

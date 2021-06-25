@@ -1,4 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+  font-family: 'Quicksand', sans-serif; }
+
+.top_nav {
+  margin: 0 auto;
+  background-color: #ECB22E;
+  display: flex;
+  justify-content: center; }
+  .top_nav .middle_nav {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 0.5rem 0; }
+  .top_nav .options_nav {
+    display: flex;
+    align-items: center; }
+  .top_nav a :not(.logo), .top_nav .options_nav a {
+    background-color: transparent;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    border-radius: 1rem; }
+  .top_nav a:hover :not(.logo) {
+    background-color: #555; }
+  .top_nav a:active :not(.logo) {
+    background-color: #555; }
+  .top_nav .logo {
+    background-color: transparent;
+    text-decoration: none;
+    color: white; }
+
+.main-section {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 70vw; }
+
+.menu {
+  margin-top: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .menu .create-post-a {
+    background-color: purple;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem; }
+
+.list-card {
+  background-color: white;
+  min-height: 300px;
+  /* border: solid 1px; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px -8px; }
+  .list-card .list-card-img {
+    width: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .list-card .list-card-body {
+    width: 60%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin: 2vh; }
+    .list-card .list-card-body .list-card-footer {
+      height: 20%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end; }
+      .list-card .list-card-body .list-card-footer a {
+        background-color: #36C5F0;
+        color: white;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        margin-left: 0.5rem;
+        border-radius: 0.5rem; }
 
 /*# sourceMappingURL=main.css.map */

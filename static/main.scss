@@ -1,3 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
     background-color: whitesmoke;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.top_nav {
+    
+    margin: 0 auto;
+    background-color: #ECB22E;
+    display: flex;
+    justify-content: center;
+    
+    .middle_nav{
+        width: 70vw;
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0.5rem 0 0.5rem 0;
+    }
+
+    .options_nav {
+        display: flex;
+        align-items: center;
+    }
+
+    a :not(.logo), .options_nav a {
+        background-color: transparent;
+        color: white;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        margin-left: 0.5rem;
+        border-radius: 1rem;
+    }
+    a:hover :not(.logo) {
+        background-color: #555;
+    }
+    
+    a:active :not(.logo) {
+        background-color: #555;
+    }
+    
+    .logo {
+        // padding: 1em 1.5em;
+        background-color: transparent;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.main-section {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    width: 70vw;
+}
+.menu {
+    margin-top: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width:100%;
+    
+    .create-post-a{
+        background-color: purple;
+        color: white;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        margin-left: 0.5rem;
+        border-radius: 0.5rem;
+    }
+}
+
+.list-card{
+    background-color: white;
+    // 
+    min-height: 300px;
+    /* border: solid 1px; */
+    display: flex;
+    justify-content: space-between;
+    
+    margin-bottom: 5vh;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px -8px;
+
+    .list-card-img {
+        width: 40%;
+        background-repeat: no-repeat;
+        // background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .list-card-body {
+        width: 60%;
+
+        display:flex;
+        flex-flow: column;
+        justify-content: space-between;
+        margin: 2vh;
+        
+
+        .list-card-footer{
+            
+            height: 20%;
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-end;
+            a {
+                background-color: #36C5F0;
+                color: white;
+                padding: 1em 1.5em;
+                text-decoration: none;
+                margin-left: 0.5rem;
+                border-radius: 0.5rem;  
+            }
+        }
+    }
 }
