@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+
+    {% if form.instance.pk %}
+        <input type="submit" value="Update" />
+    {% else %}
+        <input type="submit" value="Create post" />
+    {% endif %}
+</form>

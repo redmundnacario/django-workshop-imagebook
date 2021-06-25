@@ -1,0 +1,21 @@
+{% if object.active %}
+    Name: {{ object.author | title }} <br />
+    Time of posting: {{ object.created }} <br />
+    {% if object.created != object.date_updated %}
+        Last modified: {{ object.date_updated }} <br />
+    {% endif %}
+    <hr>
+    {{ object.content }} <br />
+
+    {% if object.picture_url %}
+        <img src="{{ object.picture_url }}" alt="">
+    {% endif %}
+
+
+    {% if hide_button == False %}
+        <a href="{% url "forum:post_edit" object.id %}">Edit</a>
+        <a href="{% url "forum:post_delete" object.id %}">Delete</a>
+    {% endif %}
+{% else %}
+    This content have been deleted.
+{% endif %}
